@@ -1,0 +1,15 @@
+mar 13 oct 2020 12:47:49 CEST
+juanjo   :0           2020-09-29 13:19 (:0)
+bd.class.php
+errorescomando.log
+fix_existe
+header.inc.php
+index.php
+install.txt
+mail.class.php
+procesos.txt
+prueba
+readme.txt
+resu
+resultadodatewhols.txt
+salida.txt
