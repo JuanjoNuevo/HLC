@@ -14,14 +14,17 @@ fi
 
 ALEATORIO=$(($RANDOM%$1+1))
 clear
-INTENTOS=1
+INTENTOS=0
 BANDERA=1
 participante=0
+JUGADOR=0
 echo "El número aleatorio se ha generado. Juguemos: "
 echo ""
 RESPUESTA=-1
 while [ "$RESPUESTA" -ne "$ALEATORIO" ] ; do
-	if [ (intentos%2) == 0 ]
+	let JUGADOR=($INTENTOS%2);
+	if [ "$JUGADOR" != 0 ]
+	then
 		echo "Le toca al jugador 2"
 		participante=2
 	else
@@ -33,7 +36,7 @@ while [ "$RESPUESTA" -ne "$ALEATORIO" ] ; do
 	let INTENTOS=$INTENTOS+1
 	while [ "$BANDERA" -eq "1" ]
 	do
-		if [ [ "$RESPUESTA" -lt "1" ] || [ "$RESPUESTA" -gt "$1" ] ]
+		if [ [["$RESPUESTA" -lt "1"] || ["$RESPUESTA" -gt "$1"]] ]
 		then
 			BANDERA=1
 		else
@@ -54,5 +57,6 @@ then
 	echo "Has acertado!!!"
 	echo ""
 	echo "El ganador es el jugador numero "$participante"."
+	echo ""
 	echo "Habéis gastado "$INTENTOS" intentos."
 fi
